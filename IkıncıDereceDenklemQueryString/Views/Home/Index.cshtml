@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "İkinci Derece Denklem Çözücü";
+}
+
+<h2>İkinci Derece Denklem Çözücü</h2>
+
+@if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+{
+    <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+}
+
+@if (!string.IsNullOrEmpty(ViewBag.SolutionMessage))
+{
+    <div class="alert alert-success">@ViewBag.SolutionMessage</div>
+}
+
+<form action="/Home/SolveEquation" method="get">
+    <div class="form-group">
+        <label>a:</label>
+        <input type="number" name="a" required>
+    </div>
+    <div class="form-group">
+        <label>b:</label>
+        <input type="number" name="b" required>
+    </div>
+    <div class="form-group">
+        <label>c:</label>
+        <input type="number" name="c" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Çöz</button>
+</form>
